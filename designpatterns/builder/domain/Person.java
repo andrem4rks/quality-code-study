@@ -1,4 +1,4 @@
-package builder;
+package designpatterns.builder.domain;
 
 public class Person {
     private String name;
@@ -16,7 +16,11 @@ public class Person {
         private String email;
         private String username;
 
-        public PersonBuilder() {}
+        private PersonBuilder() {}
+
+        public static PersonBuilder builder() {
+            return new PersonBuilder();
+        }
 
         public PersonBuilder name(String name) {
             this.name = name;
