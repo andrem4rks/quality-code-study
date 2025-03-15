@@ -2,7 +2,7 @@ package designpatterns.singleton.singletoneenum.test;
 
 import designpatterns.singleton.singletoneenum.domain.AircraftSingletonEnum;
 
-public class SingletonLazyTest {
+public class SingletonEnumTest {
     public static void main(String[] args) {
 
         bookSeat("A1");
