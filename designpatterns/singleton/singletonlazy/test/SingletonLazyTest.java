@@ -1,8 +1,8 @@
-package designpatterns.singleton.test;
+package designpatterns.singletonlazy.test;
 
-import designpatterns.singleton.domain.Aircraft;
+import designpatterns.singletonlazy.domain.Aircraft;
 
-public class SingletonTest {
+public class SingletonLazyTest {
     public static void main(String[] args) {
 
         bookSeat("A1");

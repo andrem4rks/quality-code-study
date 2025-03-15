@@ -1,17 +1,17 @@
-package designpatterns.singleton.domain;
+package designpatterns.singletonlazy.domain;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public final class AircraftSingletonEager {
+public final class AircraftSingletonLazy {
 
     //EAGER Initializtion
-    private static final AircraftSingletonEager INSTANCE = new AircraftSingletonEager("747-900");
+    private static AircraftSingletonLazy INSTANCE;
 
     private final Set<String> availableSeats = new HashSet<>();
     private final String name;
 
-    public AircraftSingletonEager(String name) {
+    public AircraftSingletonLazy(String name) {
         this.name = name;
     }
 
@@ -24,7 +24,10 @@ public final class AircraftSingletonEager {
         return this.availableSeats.remove(seat);
     }
 
-    public static AircraftSingletonEager getINSTANCE() {
+    public static AircraftSingletonLazy getINSTANCE() {
+        if (INSTANCE == null) {
+            INSTANCE = new AircraftSingletonLazy("747-900");
+        }
         return INSTANCE;
     }
 }

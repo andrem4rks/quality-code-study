@@ -1,4 +1,4 @@
-package designpatterns.singleton.domain;
+package designpatterns.singleton.singletoneager.domain;
 
 import java.util.HashSet;
 import java.util.Set;
