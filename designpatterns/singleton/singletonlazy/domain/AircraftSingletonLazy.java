@@ -1,4 +1,4 @@
-package designpatterns.singletonlazy.domain;
+package designpatterns.singleton.singletonlazy.domain;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -25,8 +25,13 @@ public final class AircraftSingletonLazy {
     }
 
     public static AircraftSingletonLazy getINSTANCE() {
+        //trying to make it thread safe
         if (INSTANCE == null) {
-            INSTANCE = new AircraftSingletonLazy("747-900");
+            synchronized (AircraftSingletonLazy.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new AircraftSingletonLazy("747-900");
+                }
+            }
         }
         return INSTANCE;
     }

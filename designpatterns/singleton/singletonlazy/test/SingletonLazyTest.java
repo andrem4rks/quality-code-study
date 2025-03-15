@@ -1,6 +1,6 @@
-package designpatterns.singletonlazy.test;
+package designpatterns.singleton.singletonlazy.test;
 
-import designpatterns.singletonlazy.domain.Aircraft;
+import designpatterns.singleton.singletonlazy.domain.AircraftSingletonLazy;
 
 public class SingletonLazyTest {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class SingletonLazyTest {
     }
 
     private static void bookSeat(String seat) {
-        Aircraft aircraft = new Aircraft("747-900");
+        AircraftSingletonLazy aircraft = AircraftSingletonLazy.getINSTANCE();
         System.out.println(aircraft.bookSeat(seat));
         System.out.println(aircraft);
     }
